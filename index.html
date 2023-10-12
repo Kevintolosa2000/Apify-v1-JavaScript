@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ADIVINA LA CANCIÓN</h1>
+    
+    <div>
+        <input type="text" id="playlistUrlInput" placeholder="Ingresa la URL de la lista de reproducción">
+    </div>
+<div>
+    <button id="getPlaylistButton">Cargar canciones</button>
+</div>
+    <div id="infoContainer">
+        <p id="info"></p>
+        <img id="albumCover" src="" width="200" height="200" />
+    </div>
+
+    <audio id="audioPlayer" controls></audio>
+
+    <div class="options">
+        <button id="option1"></button>
+        <button id="option2"></button>
+        <button id="option3"></button>
+        <button id="option4"></button>
+    </div>
+
+    <button id="skipButton">Hint</button>
+
+    <audio id="winSound" src="Ganaste.mp3" preload="auto"></audio>
+    <audio id="loseSound" src="Perdiste.mp3" preload="auto"></audio>
+
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
