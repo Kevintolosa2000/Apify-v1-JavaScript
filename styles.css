@@ -1,0 +1,91 @@
+body {
+    background-image: url('https://wallpapercave.com/wp/wp5134857.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.custom-button {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 50px;
+}
+
+h1 {
+    font-size: 40px; 
+    color: rgba(0, 0, 0, 0.87); 
+}
+.hints {
+    font-size: 25px; 
+    color: rgba(0, 0, 0, 0.932); 
+}
+
+.container {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.options button {
+    font-weight: normal;
+    display: block;
+    margin: 5px auto;
+}
+
+#infoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.album-container {
+    display: flex;
+    align-items: center;
+}
+
+.albumCover {
+    margin-right: 20px;
+    border-radius: 10%;
+}
+
+#audioPlayer {
+    margin-top: 10px;
+}
+
+#buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#resetButton{
+    order: 1;
+    margin: 0 5px;
+}
+#skipButton {
+    order: -1;
+    margin: 0 30px;
+}
+
+.custom-image {
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}

@@ -4,36 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guess the Song</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>ADIVINA LA CANCIÓN</h1>
-    
-    <div>
-        <input type="text" id="playlistUrlInput" placeholder="Ingresa la URL de la lista de reproducción">
+    <div class="container">
+        <h1>🎵 Guess the Song 🎵</h1>
+
+        <div>
+
+            <input type="text" id="playlistUrlInput" placeholder="       Ingresa su Playlist">
+        </div>
+        <div>
+            <button id="getPlaylistButton">Cargar canciones</button>
+        </div>
+        <div class="hints" id="infoContainer">
+            <p id="info"></p>
+            <div class="album-container">
+                <img class="albumCover" id="albumCover" src="https://cdn-icons-png.flaticon.com/512/725/725342.png?ga=GA1.1.1309938857.1697262171" width="200" height="200">
+                <img id="skipButton" src="https://cdn-icons-png.flaticon.com/128/3176/3176298.png?ga=GA1.1.1309938857.1697262171&track=sph" alt="Hint" class="custom-image">
+                <img id="resetButton" src="https://cdn-icons-png.flaticon.com/128/391/391175.png?ga=GA1.1.1309938857.1697262171&track=sph" alt="Reset" class="custom-image">
+            </div>
+        </div>
+
+        <audio id="audioPlayer" controls></audio>
+
+        <div class="options">
+            <button id="option1"></button>
+            <button id="option2"></button>
+            <button id="option3"></button>
+            <button id="option4"></button>
+        </div>
+        <audio id="winSound" src="Ganaste.mp3" preload="auto"></audio>
+        <audio id="loseSound" src="Perdiste.mp3" preload="auto"></audio>
+
+        
     </div>
-<div>
-    <button id="getPlaylistButton">Cargar canciones</button>
-</div>
-    <div id="infoContainer">
-        <p id="info"></p>
-        <img id="albumCover" src="" width="200" height="200" />
-    </div>
-
-    <audio id="audioPlayer" controls></audio>
-
-    <div class="options">
-        <button id="option1"></button>
-        <button id="option2"></button>
-        <button id="option3"></button>
-        <button id="option4"></button>
-    </div>
-
-    <button id="skipButton">Hint</button>
-
-    <audio id="winSound" src="Ganaste.mp3" preload="auto"></audio>
-    <audio id="loseSound" src="Perdiste.mp3" preload="auto"></audio>
 
     <script src="scripts.js"></script>
 

@@ -10,6 +10,7 @@ const option2Button = document.getElementById('option2');
 const option3Button = document.getElementById('option3');
 const option4Button = document.getElementById('option4');
 const hintButton = document.getElementById('skipButton');
+const resetButton = document.getElementById('resetButton');
 const info = document.getElementById('info');
 const albumCover = document.getElementById('albumCover');
 
@@ -104,33 +105,35 @@ const getPlaylist = async (token, playlistUrl) => {
 
 // Obtener la informacion de la playlist y llama al juego
 function getPlaylistAndPlay() {
-
     getToken()
         .then(token => {
-
             console.log('Access Token:', token);
-
             getUrlPlaylist()
                 .then(playlistUrl => {
                     console.log(playlistUrl);
-                    //const PlaylistUrl = 'https://api.spotify.com/v1/playlists/1YT9psh8iyZTM9tnYDvk8a?si=5e5b1874b9374401';
                     getPlaylist(token, playlistUrl)
                         .then(playlistData => {
                             if (playlistData) {
-
                                 playTheGame(playlistData);
                                 console.log('Playlist Data:', playlistData);
+                                enableButtons();
                             }
-                        })
+                        });
                 })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
 
+
+
 // Adivina la cancion con opciones
 function playTheGame(playlistData) {
+
     const randomTracks = getRandomTracks(playlistData, 4);
     const winningTrackIndex = Math.floor(Math.random() * 4);
     const winningTrack = randomTracks[winningTrackIndex];
@@ -173,6 +176,7 @@ function playTheGame(playlistData) {
             audioPlayer.currentTime = 0;
         }
     });
+
 }
 
 
@@ -212,6 +216,15 @@ function disableButtons() {
     hintButton.disabled = true;
 }
 
+// Deshabilita los botones
+function enableButtons() {
+    option1Button.disabled = false;
+    option2Button.disabled = false;
+    option3Button.disabled = false;
+    option4Button.disabled = false;
+    hintButton.disabled = false;
+
+}
 //Verifica la opcion
 function handleOptionClick(correct) {
     const winSound = document.getElementById('winSound');
@@ -280,8 +293,16 @@ function getUrlPlaylist() {
 
     });
 }
-
 getPlaylistAndPlay();
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    resetButton.addEventListener('click', () => {
+        location.reload();
+    });
+
+
+});
 
 /*
 //Segunda version del adivina la cancion con opciones pero sin playlist
